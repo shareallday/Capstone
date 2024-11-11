@@ -20,6 +20,10 @@
   "workbench.iconTheme": "material-icon-theme",
   "workbench.view.alwaysShowHeaderActions": true,
   "editor.rulers": [
-      100, 120
+    100,
+    120
+  ],
+  "cSpell.words": [
+    "Navigo"
   ]
 }
