@@ -16,7 +16,7 @@ export default () => html`
         </div>
         <div class="contact-form">
           <h2>Send us a Message</h2>
-          <form id="https://formspree.io/f/mdkokpde">
+          <form>
             <div class="form-group">
               <label for="name">Name:</label>
               <input type="text" id="name" name="name" required />
