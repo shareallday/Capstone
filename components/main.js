@@ -6,6 +6,6 @@ export default state => html`
 `;
 
 // // export default () => html`
-//   ${views["home"]()} ${views["about"]()} ${views["contact"]()}
+//   ${views["dineDash"]()}${views["home"]()} ${views["about"]()} ${views["contact"]()}
 //   ${views["foodMenu"]()}
 // `;

@@ -19,7 +19,7 @@ export default () => html`
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2024 DineDash. All rights reserved.</p>
+      <p id="copyright">&copy; 2024 DineDash. All rights reserved.</p>
     </div>
   </footer>
 `;
