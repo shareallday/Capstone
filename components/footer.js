@@ -13,8 +13,8 @@ export default () => html`
         <h4>Powered By</h4>
         <img src="${logo}" alt="DineDash Logo" class="logo" />
         <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <!-- <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li> -->
         </ul>
       </div>
     </div>

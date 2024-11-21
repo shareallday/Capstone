@@ -1,4 +1,4 @@
 export default {
-  header: "Welcome to Nigerian Suya",
+  header: "Home",
   view: "home"
 };
