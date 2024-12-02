@@ -24,14 +24,50 @@ router.hooks({
   before: (done, match) => {
     // We need to know what view we are on to know what data to fetch
     const view = match?.data?.view ? camelCase(match.data.view) : "home";
-    done();
-    // break is not needed since it is the last condition, if you move default higher in the stack then you should add the break statement.
+
+
+
+    switch (view) {
+      case "about":
+        axios.get(`https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=st%20louis&units=imperial`).then(response => {
+          console.log("Weather Response Data", response.data);
+
+          store.about.weather = {
+            city: response.data.name,
+            temp: response.data.main.temp,
+            feelsLike: response.data.main.feels_like,
+            description: response.data.weather[0].main
+          };
+          done();
+        })
+          .catch((err) => {
+            console.log(err);
+            done();
+          });
+        break
+      // Added in Lesson 7.1
+      //   case: "about":
+      //     axios
+      //       .get(`${process.env.DINEDASH_API_URL = http://localhost:4040`)
+      // .then(response => {
+      //         store.pizza.pizzas = response.data;
+      //         done();
+      //       })
+      //       .catch((error) => {
+      //         console.log(response, response);
+      //         done();
+      //       });
+      //     break;
+      default:
+        done();
+    }
   },
-  already: match => {
-    const view = match?.data?.view ? camelCase(match.data.view) : "home";
+  already: (params) => {
+    const view = params?.data?.view ? camelCase(params.data.view) : "home";
 
     render(store[view]);
   },
+
   after: match => {
     const view = match?.data?.view ? camelCase(match.data.view) : "home";
 
@@ -95,4 +131,3 @@ router.on({
   }
 })
   .resolve();
-
